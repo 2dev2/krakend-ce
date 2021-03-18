@@ -36,7 +36,7 @@
             "endpoint": "/crash",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/unknown"
                 }
             ]
@@ -48,7 +48,7 @@
             "backend": [
                 {
                     "encoding": "no-op",
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/"
                 }
             ]
@@ -58,7 +58,7 @@
             "output_encoding": "xml",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/xml",
                     "encoding": "xml"
                 }
@@ -69,7 +69,7 @@
             "output_encoding": "xml",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding"
                 }
             ]
@@ -80,7 +80,7 @@
             "output_encoding": "negotiate",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/xml",
                     "encoding": "xml"
                 }
@@ -167,7 +167,7 @@
                     "roles_key": "roles",
                     "issuer": "https://krakend.io",
                     "roles": ["role_a", "role_b", "role_y"],
-                    "jwk-url": "http://127.0.0.1:8081/jwk/symmetric",
+                    "jwk-url": "http://127.0.0.1:8082/jwk/symmetric",
                     "disable_jwk_security": true
                 }
             }
@@ -180,7 +180,7 @@
             ],
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/{bar}?foo={foo}"
                 }
             ]
@@ -194,7 +194,7 @@
             ],
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/{bar}?foo={foo}"
                 }
             ]
@@ -204,7 +204,7 @@
             "headers_to_pass": [ "*" ],
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/{bar}?foo={foo}"
                 }
             ]
@@ -214,7 +214,7 @@
             "querystring_params": [ "*" ],
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/{name}"
                 }
             ]
@@ -224,7 +224,7 @@
             "querystring_params": [ "a" ],
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/{name}"
                 }
             ]
@@ -239,12 +239,12 @@
           "backend": [
             {
               "url_pattern": "/param_forwarding/{param}",
-              "host": [ "http://127.0.0.1:8081" ],
+              "host": [ "http://127.0.0.1:8082" ],
               "whitelist": [ "foo" ]
             },
             {
               "url_pattern": "/param_forwarding/{resp0_foo}",
-              "host": [ "http://127.0.0.1:8081" ]
+              "host": [ "http://127.0.0.1:8082" ]
             }
           ]
         },
@@ -258,12 +258,12 @@
           "backend": [
             {
               "url_pattern": "/param_forwarding/{param}",
-              "host": [ "http://127.0.0.1:8081" ],
+              "host": [ "http://127.0.0.1:8082" ],
               "whitelist": [ "foo" ]
             },
             {
               "url_pattern": "/{resp0_foo}",
-              "host": [ "http://127.0.0.1:8081" ]
+              "host": [ "http://127.0.0.1:8082" ]
             }
           ]
         },
@@ -272,7 +272,7 @@
             "method": "GET",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/collection/{id}",
                     "is_collection": true,
                     "extra_config": {
@@ -301,7 +301,7 @@
             "method": "GET",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/collection/{id}",
                     "is_collection": true,
                     "mapping": {
@@ -309,7 +309,7 @@
                     }
                 },
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/param_forwarding/{id}",
                     "whitelist": [ "foo" ]
                 }
@@ -359,12 +359,12 @@
             "timeout": "100ms",
             "backend": [
                 {
-                    "host": ["http://127.0.0.1:8081"],
+                    "host": ["http://127.0.0.1:8082"],
                     "url_pattern": "/param_forwarding/123",
                     "group": "first"
                 },
                 {
-                    "host": ["http://127.0.0.1:8081"],
+                    "host": ["http://127.0.0.1:8082"],
                     "url_pattern": "/delayed/",
                     "group": "second"
                 }
@@ -374,7 +374,7 @@
             "endpoint": "/detail_error",
             "backend": [
                 {
-                    "host": ["http://127.0.0.1:8081"],
+                    "host": ["http://127.0.0.1:8082"],
                     "url_pattern": "/param_forwarding/",
                     "extra_config": {
                         "github.com/devopsfaith/krakend/http": {
@@ -383,7 +383,7 @@
                     }
                 },
                 {
-                    "host": ["http://127.0.0.1:8081"],
+                    "host": ["http://127.0.0.1:8082"],
                     "url_pattern": "/",
                     "extra_config": {
                         "github.com/devopsfaith/krakend/http": {
@@ -397,7 +397,7 @@
             "endpoint": "/redirect/{code}",
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/redirect/?status={code}"
                 }
             ]
@@ -429,7 +429,7 @@
                     "roles_key": "roles",
                     "issuer": "https://krakend.io",
                     "roles": ["role_a", "role_c"],
-                    "jwk-url": "http://127.0.0.1:8081/jwk/symmetric",
+                    "jwk-url": "http://127.0.0.1:8082/jwk/symmetric",
                     "disable_jwk_security": true
                 }
             }
@@ -439,7 +439,7 @@
             "backend": [
                 {
                     "url_pattern": "/param_forwarding/{JWT.sub}",
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "blacklist": ["foo", "headers", "query"]
                 }
             ],
@@ -461,7 +461,7 @@
                     "roles_key": "roles",
                     "issuer": "https://krakend.io",
                     "roles": ["role_a", "role_c"],
-                    "jwk-url": "http://127.0.0.1:8081/jwk/symmetric",
+                    "jwk-url": "http://127.0.0.1:8082/jwk/symmetric",
                     "disable_jwk_security": true
                 }
             }
@@ -495,7 +495,7 @@
                     "alg": "HS256",
                     "kid": "sim2",
                     "keys-to-sign": ["access_token"],
-                    "jwk-url": "http://127.0.0.1:8081/jwk/symmetric",
+                    "jwk-url": "http://127.0.0.1:8082/jwk/symmetric",
                     "disable_jwk_security": true
                 }
             }
@@ -505,7 +505,7 @@
             "headers_to_pass": ["*"],
             "backend": [
                 {
-                    "host": [ "http://127.0.0.1:8081" ],
+                    "host": [ "http://127.0.0.1:8082" ],
                     "url_pattern": "/collection/",
                     "is_collection": true,
                     "extra_config": {
@@ -578,7 +578,7 @@
             "method": "POST",
             "backend": [
                 {
-                    "host": ["http://127.0.0.1:8081"],
+                    "host": ["http://127.0.0.1:8082"],
                     "url_pattern": "/"
                 }
             ],

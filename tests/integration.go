@@ -26,7 +26,7 @@ import (
 var (
 	defaultBinPath     *string = flag.String("krakend_bin_path", ".././krakend", "The default path to the krakend bin")
 	defaultSpecsPath   *string = flag.String("krakend_specs_path", "./fixtures/specs", "The default path to the specs folder")
-	defaultBackendPort *int    = flag.Int("krakend_backend_port", 8081, "The port for the mocked backend api")
+	defaultBackendPort *int    = flag.Int("krakend_backend_port", 8082, "The port for the mocked backend api")
 	defaultCfgPath     *string = flag.String(
 		"krakend_config_path",
 		"fixtures/krakend.json",
